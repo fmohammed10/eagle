@@ -5,14 +5,12 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('stsymbol'); ?></th>
-			<th><?php echo $this->Paginator->sort('stname'); ?></th>
-			<th><?php echo $this->Paginator->sort('noshares'); ?></th>
-			<th><?php echo $this->Paginator->sort('purchaseprice'); ?></th>
-			<th><?php echo $this->Paginator->sort('datepurchased'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('stock_symbol'); ?></th>
+			<th><?php echo $this->Paginator->sort('stock_name'); ?></th>
+			<th><?php echo $this->Paginator->sort('units_purchased'); ?></th>
+			<th><?php echo $this->Paginator->sort('purchase_price'); ?></th>
+			<th><?php echo $this->Paginator->sort('date_purchased'); ?></th>
+			<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -22,13 +20,11 @@
 		<td>
 			<?php echo $this->Html->link($stock['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $stock['Customer']['id'])); ?>
 		</td>
-		<td><?php echo h($stock['Stock']['stsymbol']); ?>&nbsp;</td>
-		<td><?php echo h($stock['Stock']['stname']); ?>&nbsp;</td>
-		<td><?php echo h($stock['Stock']['noshares']); ?>&nbsp;</td>
-		<td><?php echo h($stock['Stock']['purchaseprice']); ?>&nbsp;</td>
-		<td><?php echo h($stock['Stock']['datepurchased']); ?>&nbsp;</td>
-		<td><?php echo h($stock['Stock']['created']); ?>&nbsp;</td>
-		<td><?php echo h($stock['Stock']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($stock['Stock']['stock_symbol']); ?>&nbsp;</td>
+		<td><?php echo h($stock['Stock']['stock_name']); ?>&nbsp;</td>
+		<td><?php echo h($stock['Stock']['units_purchased']); ?>&nbsp;</td>
+		<td><?php echo h($stock['Stock']['purchase_price']); ?>&nbsp;</td>
+		<td><?php echo h($stock['Stock']['date_purchased']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $stock['Stock']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $stock['Stock']['id'])); ?>

@@ -11,9 +11,9 @@
 			<?php echo h($customer['Customer']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Streetaddress'); ?></dt>
+		<dt><?php echo __('Address'); ?></dt>
 		<dd>
-			<?php echo h($customer['Customer']['streetaddress']); ?>
+			<?php echo h($customer['Customer']['address']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('City'); ?></dt>
@@ -31,29 +31,19 @@
 			<?php echo h($customer['Customer']['zip']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Primaryemail'); ?></dt>
+		<dt><?php echo __('E-mail'); ?></dt>
 		<dd>
-			<?php echo h($customer['Customer']['primaryemail']); ?>
+			<?php echo h($customer['Customer']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Homephone'); ?></dt>
+		<dt><?php echo __('Home Phone'); ?></dt>
 		<dd>
-			<?php echo h($customer['Customer']['homephone']); ?>
+			<?php echo h($customer['Customer']['home_phone']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Cellphone'); ?></dt>
+		<dt><?php echo __('Cell Phone'); ?></dt>
 		<dd>
-			<?php echo h($customer['Customer']['cellphone']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($customer['Customer']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($customer['Customer']['modified']); ?>
+			<?php echo h($customer['Customer']['cell_phone']); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -82,13 +72,11 @@
 		<th><?php echo __('Customer Id'); ?></th>
 		<th><?php echo __('Category'); ?></th>
 		<th><?php echo __('Description'); ?></th>
-		<th><?php echo __('Acquiredvalue'); ?></th>
-		<th><?php echo __('Acquireddate'); ?></th>
-		<th><?php echo __('Recentvalue'); ?></th>
-		<th><?php echo __('Recentdate'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
+		<th><?php echo __('Acquired Value'); ?></th>
+		<th><?php echo __('Acquired Date'); ?></th>
+		<th><?php echo __('Recent Value'); ?></th>
+		<th><?php echo __('Recent Date'); ?></th>
+		<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($customer['Investment'] as $investment): ?>
 		<tr>
@@ -96,12 +84,10 @@
 			<td><?php echo $investment['customer_id']; ?></td>
 			<td><?php echo $investment['category']; ?></td>
 			<td><?php echo $investment['description']; ?></td>
-			<td><?php echo $investment['acquiredvalue']; ?></td>
-			<td><?php echo $investment['acquireddate']; ?></td>
-			<td><?php echo $investment['recentvalue']; ?></td>
-			<td><?php echo $investment['recentdate']; ?></td>
-			<td><?php echo $investment['created']; ?></td>
-			<td><?php echo $investment['modified']; ?></td>
+			<td><?php echo $investment['acquired_value']; ?></td>
+			<td><?php echo $investment['acquired_date']; ?></td>
+			<td><?php echo $investment['recent_value']; ?></td>
+			<td><?php echo $investment['recent_date']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'investments', 'action' => 'view', $investment['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'investments', 'action' => 'edit', $investment['id'])); ?>
@@ -129,7 +115,7 @@
 		<th><?php echo __('Fund Name'); ?></th>
 		<th><?php echo __('Category'); ?></th>
 		<th><?php echo __('Fund Family'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
+		<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($customer['Mutualfund'] as $mutualfund): ?>
 		<tr>
@@ -162,28 +148,24 @@
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Customer Id'); ?></th>
-		<th><?php echo __('Stsymbol'); ?></th>
-		<th><?php echo __('Stname'); ?></th>
-		<th><?php echo __('Noshares'); ?></th>
-		<th><?php echo __('Purchaseprice'); ?></th>
-		<th><?php echo __('Currentprice'); ?></th>
-		<th><?php echo __('Datepurchased'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
+		<th><?php echo __('Stock Symbol'); ?></th>
+		<th><?php echo __('Stock Name'); ?></th>
+		<th><?php echo __('Units Purchased'); ?></th>
+		<th><?php echo __('Purchase Price'); ?></th>
+		<th><?php echo __('Current Price'); ?></th>
+		<th><?php echo __('Date Purchased'); ?></th>
+		<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($customer['Stock'] as $stock): ?>
 		<tr>
 			<td><?php echo $stock['id']; ?></td>
 			<td><?php echo $stock['customer_id']; ?></td>
-			<td><?php echo $stock['stsymbol']; ?></td>
-			<td><?php echo $stock['stname']; ?></td>
-			<td><?php echo $stock['noshares']; ?></td>
-			<td><?php echo $stock['purchaseprice']; ?></td>
-			<td><?php  require_once('nusoap.php');  $c = new nusoap_client('http://loki.ist.unomaha.edu/~groyce/ws/stockquoteservice.php'); echo $c->call('getStockQuote', array('symbol' => $stock['stsymbol'])) ?></td>
-			<td><?php echo $stock['datepurchased']; ?></td>
-			<td><?php echo $stock['created']; ?></td>
-			<td><?php echo $stock['modified']; ?></td>
+			<td><?php echo $stock['stock_symbol']; ?></td>
+			<td><?php echo $stock['stock_name']; ?></td>
+			<td><?php echo $stock['units_purchased']; ?></td>
+			<td><?php echo $stock['purchase_price']; ?></td>
+			<td><?php  require_once('nusoap.php');  $c = new nusoap_client('http://loki.ist.unomaha.edu/~groyce/ws/stockquoteservice.php'); echo $c->call('getStockQuote', array('symbol' => $stock['stock_symbol'])) ?></td>
+			<td><?php echo $stock['date_purchased']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'stocks', 'action' => 'view', $stock['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'stocks', 'action' => 'edit', $stock['id'])); ?>

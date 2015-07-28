@@ -11,39 +11,29 @@
 			<?php echo $this->Html->link($stock['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $stock['Customer']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Stsymbol'); ?></dt>
+		<dt><?php echo __('Stock_symbol'); ?></dt>
 		<dd>
-			<?php echo h($stock['Stock']['stsymbol']); ?>
+			<?php echo h($stock['Stock']['stock_symbol']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Stname'); ?></dt>
+		<dt><?php echo __('Stock_name'); ?></dt>
 		<dd>
-			<?php echo h($stock['Stock']['stname']); ?>
+			<?php echo h($stock['Stock']['stock_name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Noshares'); ?></dt>
+		<dt><?php echo __('Units_purchased'); ?></dt>
 		<dd>
-			<?php echo h($stock['Stock']['noshares']); ?>
+			<?php echo h($stock['Stock']['units_purchased']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Purchaseprice'); ?></dt>
+		<dt><?php echo __('Purchase_price'); ?></dt>
 		<dd>
-			<?php echo h($stock['Stock']['purchaseprice']); ?>
+			<?php echo h($stock['Stock']['purchase_price']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Datepurchased'); ?></dt>
+		<dt><?php echo __('Date_purchased'); ?></dt>
 		<dd>
-			<?php echo h($stock['Stock']['datepurchased']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($stock['Stock']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($stock['Stock']['modified']); ?>
+			<?php echo h($stock['Stock']['date_purchased']); ?>
 			&nbsp;
 		</dd>
 	</dl>

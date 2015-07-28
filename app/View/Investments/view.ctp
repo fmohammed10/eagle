@@ -21,34 +21,24 @@
 			<?php echo h($investment['Investment']['description']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Acquiredvalue'); ?></dt>
+		<dt><?php echo __('Acquired Value'); ?></dt>
 		<dd>
-			<?php echo h($investment['Investment']['acquiredvalue']); ?>
+			<?php echo h($investment['Investment']['acquired_value']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Acquireddate'); ?></dt>
+		<dt><?php echo __('Acquired Date'); ?></dt>
 		<dd>
-			<?php echo h($investment['Investment']['acquireddate']); ?>
+			<?php echo h($investment['Investment']['acquired_date']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Recentvalue'); ?></dt>
+		<dt><?php echo __('Recent Value'); ?></dt>
 		<dd>
-			<?php echo h($investment['Investment']['recentvalue']); ?>
+			<?php echo h($investment['Investment']['recent_value']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Recentdate'); ?></dt>
+		<dt><?php echo __('Recent Date'); ?></dt>
 		<dd>
-			<?php echo h($investment['Investment']['recentdate']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($investment['Investment']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($investment['Investment']['modified']); ?>
+			<?php echo h($investment['Investment']['recent_date']); ?>
 			&nbsp;
 		</dd>
 	</dl>

@@ -7,13 +7,11 @@
 			<th><?php echo $this->Paginator->sort('customer_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('category'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th><?php echo $this->Paginator->sort('acquiredvalue'); ?></th>
-			<th><?php echo $this->Paginator->sort('acquireddate'); ?></th>
-			<th><?php echo $this->Paginator->sort('recentvalue'); ?></th>
-			<th><?php echo $this->Paginator->sort('recentdate'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('acquired_value'); ?></th>
+			<th><?php echo $this->Paginator->sort('acquired_date'); ?></th>
+			<th><?php echo $this->Paginator->sort('recent_value'); ?></th>
+			<th><?php echo $this->Paginator->sort('recent_date'); ?></th>
+			<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -25,12 +23,10 @@
 		</td>
 		<td><?php echo h($investment['Investment']['category']); ?>&nbsp;</td>
 		<td><?php echo h($investment['Investment']['description']); ?>&nbsp;</td>
-		<td><?php echo h($investment['Investment']['acquiredvalue']); ?>&nbsp;</td>
-		<td><?php echo h($investment['Investment']['acquireddate']); ?>&nbsp;</td>
-		<td><?php echo h($investment['Investment']['recentvalue']); ?>&nbsp;</td>
-		<td><?php echo h($investment['Investment']['recentdate']); ?>&nbsp;</td>
-		<td><?php echo h($investment['Investment']['created']); ?>&nbsp;</td>
-		<td><?php echo h($investment['Investment']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($investment['Investment']['acquired_value']); ?>&nbsp;</td>
+		<td><?php echo h($investment['Investment']['acquired_date']); ?>&nbsp;</td>
+		<td><?php echo h($investment['Investment']['recent_value']); ?>&nbsp;</td>
+		<td><?php echo h($investment['Investment']['recent_date']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $investment['Investment']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $investment['Investment']['id'])); ?>

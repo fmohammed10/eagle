@@ -5,16 +5,14 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('streetaddress'); ?></th>
+			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('city'); ?></th>
 			<th><?php echo $this->Paginator->sort('state'); ?></th>
 			<th><?php echo $this->Paginator->sort('zip'); ?></th>
-			<th><?php echo $this->Paginator->sort('primaryemail'); ?></th>
-			<th><?php echo $this->Paginator->sort('homephone'); ?></th>
-			<th><?php echo $this->Paginator->sort('cellphone'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th><?php echo $this->Paginator->sort('email'); ?></th>
+			<th><?php echo $this->Paginator->sort('home_phone'); ?></th>
+			<th><?php echo $this->Paginator->sort('cell_phone'); ?></th>
+			<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -22,15 +20,13 @@
 	<tr>
 		<td><?php echo h($customer['Customer']['id']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['name']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['streetaddress']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['address']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['city']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['state']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['zip']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['primaryemail']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['homephone']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['cellphone']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['created']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['email']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['home_phone']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['cell_phone']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $customer['Customer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $customer['Customer']['id'])); ?>

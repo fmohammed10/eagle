@@ -9,7 +9,7 @@
 			<th><?php echo $this->Paginator->sort('fund_name'); ?></th>
 			<th><?php echo $this->Paginator->sort('category'); ?></th>
 			<th><?php echo $this->Paginator->sort('fund_family'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th class="actions">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
